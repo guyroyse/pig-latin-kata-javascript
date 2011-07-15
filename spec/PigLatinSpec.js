@@ -8,12 +8,21 @@ describe("Jasmine Test Runner", function() {
 
   describe("Pig Latin", function() {
 
-    beforeEach(function() {
-      // any startup code goes here
+    it("adds 'way' to the end of a single vowel word", function() {
+			expect(piglatinize("a")).toEqual("away");
     });
 
-    it("..first test goes here..", function() {
-    });
+		it("adds 'way' the end of a longer word that starts with a vowel", function() {
+			expect(piglatinize("every")).toEqual("everyway");
+		});
+
+		it("moves a single consonants to end of word with 'ay' on the end", function() {
+			expect(piglatinize("pig")).toEqual("igpay");
+		});
+
+		it("moves multiple consonants to the end of word with 'ay' on the end", function() {
+			expect(piglatinize("school")).toEqual("oolschay");
+		});
     
   });
 
